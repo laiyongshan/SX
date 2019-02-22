@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:rv="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_while"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:background="@color/colorPrimary">
+
+        <com.flyco.tablayout.SegmentTabLayout
+            android:id="@+id/national_province_stl"
+            android:layout_width="@dimen/dp_108"
+            android:layout_height="@dimen/dp_28"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            tl:tl_bar_color="#00ffffff"
+            tl:tl_indicator_color="#ffffff"
+            tl:tl_indicator_corner_radius="6dp"
+            tl:tl_tab_padding="@dimen/dp_12"
+            tl:tl_textSelectColor="@color/colorPrimary"
+            tl:tl_textUnselectColor="#ffffff"
+            tl:tl_textsize="12sp" />
+
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/switch_rtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_12"
+            android:drawableTop="@mipmap/icon_switch"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp_4"
+            android:text="城市"
+            android:textColor="@color/color_while"
+            android:textSize="@dimen/sp_12"
+            rv:rv_textPressColor="@color/luncy" />
+
+    </RelativeLayout>
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/time_tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_38"
+        app:tabIndicatorColor="@color/colorPrimary"
+        app:tabSelectedTextColor="@color/colorPrimary" />
+
+    <!--<TextView-->
+    <!--android:id="@+id/tips_tv"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text=""-->
+    <!--android:textColor="#f00"-->
+    <!--android:paddingLeft="@dimen/dp_12"-->
+    <!--android:textSize="@dimen/sp_12"-->
+    <!--/>-->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_38"
+        android:layout_marginTop="@dimen/dp_6"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_12"
+        android:paddingRight="@dimen/dp_12">
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/choose_date_rtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:minWidth="@dimen/dp_100"
+            android:padding="@dimen/dp_4"
+            android:text="2019-02-28"
+            android:textSize="@dimen/sp_12"
+            android:textColor="@color/colorPrimary"
+            rv:rv_backgroundPressColor="@color/luncy"
+            app:rv_textPressColor="@color/luncy"
+            rv:rv_cornerRadius="@dimen/dp_5"
+            rv:rv_strokeWidth="0.5dp"
+            rv:rv_strokeColor="@color/colorPrimary"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="2018-12-12 10:00更新"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:textSize="@dimen/sp_12" />
+    </RelativeLayout>
+
+
+    <com.flyco.tablayout.SegmentTabLayout
+        android:id="@+id/list_type_stl"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_28"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        tl:tl_bar_color="#00ffffff"
+        tl:tl_indicator_color="@color/colorPrimary"
+        tl:tl_indicator_corner_radius="6dp"
+        tl:tl_tab_width="@dimen/dp_62"
+        tl:tl_textSelectColor="@color/color_while"
+        tl:tl_textUnselectColor="#909090"
+        tl:tl_textsize="12sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_36"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/list_sore_way_ll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+
+            <ImageView
+                android:id="@+id/list_sore_img"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@mipmap/icon_sort_up" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="排名"
+                android:layout_marginLeft="@dimen/dp_6"
+                android:textSize="@dimen/sp_13" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/list_title_tab_city_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="城市"
+            android:textSize="@dimen/sp_13" />
+
+
+        <suncere.shanxi.androidapp.customview.PollutantNameTextView
+            android:id="@+id/tab_pollutant_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingRight="@dimen/dp_6"
+            android:text="AQI"
+            android:textSize="@dimen/sp_13" />
+
+
+        <TextView
+            android:id="@+id/tab_PrimaryPollutant_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="首要污染物"
+            android:textSize="@dimen/sp_13" />
+
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/sort_refresh_Layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dp_6">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/sort_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none" />
+
+
+            <LinearLayout
+                android:id="@+id/list_emptyText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/nothing_data" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="4dp"
+                    android:text="暂无数据!"
+                    android:textColor="#88E2E2E2"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0.5dp"-->
+        <!--android:layout_above="@+id/sort_PollutantsView"-->
+        <!--android:background="#99909090" />-->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/line_color"
+            android:layout_above="@+id/sort_PollutantsView"
+            />
+
+        <suncere.shanxi.androidapp.customview.PollutantsView
+            android:id="@+id/sort_PollutantsView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_32"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0.5dp"
+            android:background="@color/color_while"
+            app:selectPollutantTextColor="@color/color_while"
+            app:unSelectPollutantTextColor="#909090"
+            bind:pollutantsCodes="99,100,101,102,103,104,105"
+            bind:pollutantsTexts="AQI,SO2,NO2,O3,CO,PM10,PM2.5"
+            bind:selectPollutantTextBackground="@drawable/pollutant_btn2" />
+
+        <View
+            android:id="@+id/bottom_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/line_color" />
+    </RelativeLayout>
+
+</LinearLayout>

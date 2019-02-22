@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:rv="http://schemas.android.com/apk/res-auto"
+    android:background="@mipmap/bg"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_bar_size"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="设置"
+        android:textColor="@color/color_while"
+        android:textSize="@dimen/title_size" />
+
+
+    <com.flyco.roundview.RoundLinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_36"
+        android:layout_marginRight="@dimen/dp_36"
+        android:layout_marginTop="@dimen/dp_36"
+        android:orientation="vertical"
+        rv:rv_strokeColor="@color/color_while"
+        rv:rv_cornerRadius="6dp"
+        rv:rv_strokeWidth="1dp"
+        >
+
+        <LinearLayout
+
+            android:id="@+id/set_MenuItemAirDes"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_48"
+            android:orientation="horizontal"
+            android:paddingLeft="21dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="16dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/set_kognqi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="空气污染级别说明"
+                android:textColor="@color/color_while"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_while" />
+
+        <LinearLayout
+            android:id="@+id/set_MenuItemSysDes"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_48"
+            android:orientation="horizontal"
+            android:paddingLeft="21dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center"
+                android:layout_marginRight="16dp"
+                android:src="@mipmap/set_shuoming" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="系统说明"
+                android:textColor="@color/color_while"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_while" />
+
+        <LinearLayout
+            android:id="@+id/set_MenuItemOption"
+            android:layout_width="fill_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal"
+            android:paddingLeft="21dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/option_des" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="操作说明"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="#eee" />
+
+
+        <!--   <View
+               android:layout_width="fill_parent"
+               android:layout_height="0.5dp"
+               android:background="#eee"/>
+           <LinearLayout
+               android:id="@+id/set_MenuItemUpdate"
+               android:layout_width="fill_parent"
+               android:orientation="horizontal"
+               android:layout_height="38dp"
+               android:paddingLeft="21dp">
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/update"
+                   android:layout_gravity="center"
+                   android:layout_marginRight="16dp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:text="检查更新"
+                     android:textSize="16sp"/>
+           </LinearLayout>-->
+        <!--<View -->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="0.5dp"-->
+        <!--android:background="#eee"/>-->
+        <LinearLayout
+            android:id="@+id/set_MenuItmeAbout"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_48"
+            android:orientation="horizontal"
+            android:paddingLeft="21dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center"
+                android:layout_marginRight="16dp"
+                android:src="@mipmap/set_about" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="关于我们"
+                android:textColor="@color/color_while"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </com.flyco.roundview.RoundLinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="38dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:paddingLeft="21dp"
+        android:paddingRight="21dp"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/set_button_exit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_login_button_exit"
+            android:text="退出"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="山西省环境监测中心站"
+        android:textColor="@color/color_while"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="31dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="技术支持：太原市明普科技有限公司"
+        android:textColor="@color/color_while"
+        android:textSize="14sp" />
+
+</LinearLayout>

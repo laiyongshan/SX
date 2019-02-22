@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/top_bar_size">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_12"
+                        android:drawableLeft="@mipmap/icon_location"
+                        android:drawablePadding="@dimen/dp_4"
+                        android:gravity="center_vertical"
+                        android:text="太原"
+                        android:textColor="@color/color_while"
+                        android:textSize="@dimen/sp_14" />
+
+
+                    <TextView
+                        android:id="@+id/map_title_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="山西空气质量发布"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/title_size" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/selected_follow_rl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="12sp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/selected_city_iv"
+                            android:layout_width="12dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:scaleType="fitCenter"
+                            android:src="@mipmap/icon_add_city" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/dp_2"
+                            android:layout_toLeftOf="@+id/selected_city_iv"
+                            android:text="城市"
+                            android:textColor="@color/color_while"
+                            android:textSize="@dimen/sp_14" />
+
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+
+                <!--各关注市县空气质量实况-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:layout_marginRight="@dimen/dp_12">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/home_viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_256" />
+
+                    <suncere.shanxi.androidapp.customview.MyUIPagerControlView
+                        android:id="@+id/home_UIpager"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="30dp" />
+
+
+                </RelativeLayout>
+
+                <!--过去24小时变化柱状图-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_220"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:background="#0d000000"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp_12">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="AQI变化趋势"
+                            android:textColor="@color/color_while"
+                            android:textSize="@dimen/sp_12" />
+
+                        <com.flyco.roundview.RoundTextView
+                            android:id="@+id/check_detail_rtv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:paddingLeft="@dimen/dp_16"
+                            android:text="详情>>"
+                            android:textColor="@color/color_while"
+                            android:textSize="@dimen/sp_12"
+                            rv:rv_strokePressColor="@color/luncy" />
+
+                    </RelativeLayout>
+
+                    <lecho.lib.hellocharts.view.ColumnChartView
+                        android:id="@+id/home_AQI_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="@dimen/dp_12"></lecho.lib.hellocharts.view.ColumnChartView>
+
+                </LinearLayout>
+
+                <!--站点列表-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:background="#0d000000"
+                    android:minHeight="@dimen/dp_120"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp_12">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="站点列表"
+                        android:textColor="@color/color_while"
+                        android:textSize="@dimen/sp_12" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:descendantFocusability="blocksDescendants">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/station_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/dp_12"></android.support.v7.widget.RecyclerView>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>

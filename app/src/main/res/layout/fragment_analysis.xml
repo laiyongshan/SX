@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg"
+    android:orientation="vertical">
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/dp_48"
+                    android:gravity="center"
+                    android:text="城市对比"
+                    android:textColor="@color/color_while"
+                    android:textSize="@dimen/sp_18" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.flyco.tablayout.SegmentTabLayout
+                        android:id="@+id/timeType_stl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="4dp"
+                        tl:tl_bar_color="#00ffffff"
+                        tl:tl_indicator_color="#ffffff"
+                        tl:tl_indicator_corner_radius="6dp"
+                        tl:tl_tab_padding="20dp"
+                        tl:tl_textSelectColor="#6094C9"
+                        tl:tl_textUnselectColor="#ffffff"
+                        tl:tl_textsize="12sp" />
+
+
+                    <com.hhl.library.FlowTagLayout
+                        android:id="@+id/flow_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp" />
+
+
+                    <!--3个城市选择-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_16">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="12dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <Spinner
+                                android:id="@+id/cityName1_sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/color_while"
+                                android:overlapAnchor="false"></Spinner>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_6"
+                                android:layout_margin="4dp"
+                                android:background="#F0E98C" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="12dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <Spinner
+                                android:id="@+id/cityName2_sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/color_while"
+                                android:overlapAnchor="false"></Spinner>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_6"
+                                android:layout_margin="4dp"
+                                android:background="#F6A15D" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="12dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <Spinner
+                                android:id="@+id/cityName3_sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/color_while"
+                                android:overlapAnchor="false"></Spinner>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_6"
+                                android:layout_margin="4dp"
+                                android:background="#8ED15F" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!--<shanxinxi.androidapp.customview.kjchart.ChartView-->
+                        <!--android:id="@+id/city_compare_chart"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="@dimen/dp_186"-->
+                        <!--android:layout_margin="12dp"-->
+                        <!--android:background="#0d000000"-->
+                        <!--android:paddingRight="6dp"-->
+                        <!--android:paddingBottom="@dimen/dp_12" />-->
+
+                    <lecho.lib.hellocharts.view.LineChartView
+                        android:id="@+id/city_compare_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_166"
+                        android:layout_margin="12dp"
+                        android:paddingBottom="6dp"
+                        android:paddingRight="6dp"
+                        >
+                    </lecho.lib.hellocharts.view.LineChartView>
+
+
+                    <TextView
+                        android:id="@+id/danwei_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:paddingRight="12dp"
+                        android:text="@string/danwei"
+                        android:textColor="@color/color_while" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:orientation="vertical">
+
+                    <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0.5dp"-->
+                    <!--android:background="@color/line_color" />-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp">
+
+                        <!--<View-->
+                        <!--android:layout_width="0.5dp"-->
+                        <!--android:layout_height="36dp"-->
+                        <!--android:background="@color/line_color" />-->
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:text="时间"
+                            android:textColor="@color/color_while"
+                            android:textSize="@dimen/sp_12" />
+
+                        <!--<View-->
+                        <!--android:layout_width="0.5dp"-->
+                        <!--android:layout_height="36dp"-->
+                        <!--android:background="@color/line_color" />-->
+
+                        <TextView
+                            android:id="@+id/city1_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/dp_6"
+                            android:layout_marginRight="@dimen/dp_6"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="站点1"
+                            android:textColor="@color/color_while"
+                            android:textSize="@dimen/sp_12" />
+
+                        <!--<View-->
+                        <!--android:layout_width="0.5dp"-->
+                        <!--android:layout_height="36dp"-->
+                        <!--android:background="@color/line_color" />-->
+
+                        <TextView
+                            android:id="@+id/city2_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/dp_6"
+                            android:layout_marginRight="@dimen/dp_6"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="站点2"
+                            android:textColor="@color/color_while"
+                            android:textSize="@dimen/sp_12" />
+
+                        <!--<View-->
+                        <!--android:layout_width="0.5dp"-->
+                        <!--android:layout_height="36dp"-->
+                        <!--android:background="@color/line_color"-->
+                        <!--android:textSize="@dimen/sp_10"-->
+                        <!--/>-->
+
+                        <TextView
+                            android:id="@+id/city3_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/dp_6"
+                            android:layout_marginRight="@dimen/dp_6"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="站点3"
+                            android:textColor="@color/color_while"
+                            android:textSize="@dimen/sp_12" />
+
+                        <!--<View-->
+                        <!--android:layout_width="0.5dp"-->
+                        <!--android:layout_height="36dp"-->
+                        <!--android:background="@color/line_color" />-->
+
+                    </LinearLayout>
+
+                    <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0.5dp"-->
+                    <!--android:background="@color/line_color" />-->
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/city_compare_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>

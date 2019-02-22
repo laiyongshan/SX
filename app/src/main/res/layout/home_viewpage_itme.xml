@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:rv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/title_rl">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="@dimen/dp_8">
+
+            <TextView
+                android:id="@+id/homedata_updata_time_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="2018年11月02日 16:00更新"
+                android:textColor="#fff" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/temperature_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12dp"
+                        android:drawableLeft="@mipmap/icon_weather"
+                        android:drawablePadding="12dp"
+                        android:gravity="center_vertical"
+                        android:text="--℃ --"
+                        android:textColor="@color/color_while"
+                        android:textSize="@dimen/sp_14" />
+
+
+                    <TextView
+                        android:id="@+id/Pollution_levels_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:drawableLeft="@mipmap/icon_level"
+                        android:drawablePadding="12dp"
+                        android:gravity="center_vertical"
+                        android:text="优"
+                        android:textColor="@color/color_while"
+                        android:textSize="@dimen/sp_14" />
+
+                </LinearLayout>
+
+                <com.shinelw.library.ColorArcProgressBar
+                    android:id="@+id/aqi_capbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    app:back_color="#fff"
+                    app:back_width="16dp"
+                    app:front_width="16dp"
+                    app:is_need_content="true"
+                    app:is_need_title="true"
+                    app:is_need_unit="false"
+                    app:max_value="500"
+                    app:string_title="空气质量指数/AQI"
+                    app:string_unit=""
+                    app:total_engle="270" />
+
+                <com.flyco.roundview.RoundTextView
+                    android:id="@+id/station_detail_rtv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:lines="1"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="2dp"
+                    android:text="站点列表"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/sp_11"
+                    rv:rv_backgroundColor="#22fff9ec"
+                    rv:rv_cornerRadius="6dp"
+                    rv:rv_strokeColor="#fff"
+                    rv:rv_strokeWidth="0.3dp"
+                    rv:rv_textPressColor="#00ffffff" />
+
+
+            </RelativeLayout>
+
+
+            <suncere.shanxi.androidapp.customview.AlwaysMarqueeTextView
+                android:id="@+id/analy_lbHealth_amtv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/home_headth_bg"
+                android:drawableLeft="@mipmap/sport"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingBottom="@dimen/dp_8"
+                android:paddingLeft="12dp"
+                android:paddingTop="@dimen/dp_8"
+                android:singleLine="true"
+                android:textColor="#fff"
+                android:textSize="@dimen/sp_14" />
+
+            <include layout="@layout/home_viewpage_itme_layout" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

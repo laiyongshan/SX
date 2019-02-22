@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="城市数据由国控点计算，数据为实时数据，未做审核"
+        android:textColor="#fff"
+        android:textSize="@dimen/sp_12" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/forecast_rv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal" />
+    </RelativeLayout>
+
+
+    <com.flyco.tablayout.SegmentTabLayout
+        android:id="@+id/home_TimeRange_CP"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_32"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        tl:tl_bar_color="#00ffffff"
+        tl:tl_indicator_color="#ffffff"
+        tl:tl_indicator_corner_radius="6dp"
+        tl:tl_tab_padding="@dimen/dp_12"
+        tl:tl_textSelectColor="#6094C9"
+        tl:tl_textUnselectColor="#ffffff"
+        tl:tl_textsize="12sp" />
+
+
+    <suncere.shanxi.androidapp.customview.PollutantsView
+        android:id="@+id/home_PollutantsView"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="#26050001"
+        android:paddingLeft="20px"
+        android:paddingRight="20px"
+        app:pollutantsCodes="99,105,104,100,101,102,103"
+        app:pollutantsTexts="AQI,PM2.5,PM10,SO2,NO2,O3,CO"
+        app:selectPollutantTextBackground="@drawable/pollutant_btn"
+        app:selectPollutantTextColor="@color/color_while" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/barchart_ibtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_imagebubtton"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/icon_zhuzhuang" />
+
+        <ImageButton
+            android:id="@+id/linechart_ibtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:background="@color/luncy"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/icon_zhexian" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <suncere.shanxi.androidapp.customview.kjchart.ChartView2
+            android:id="@+id/home_chart24"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_256"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/dp_16"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_16" />
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:textColor="@color/color_while"-->
+        <!--android:text="(h)"-->
+        <!--android:textSize="@dimen/sp_12"-->
+        <!--/>-->
+
+    </RelativeLayout>
+</LinearLayout>

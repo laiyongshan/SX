@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="listBeanfrg2"
+            type="suncere.shanxi.androidapp.model.entity.ListBean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/bg"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_size"
+            android:background="@color/colorPrimary">
+
+            <com.flyco.tablayout.SegmentTabLayout
+                android:id="@+id/national_province_stl"
+                android:layout_width="@dimen/dp_160"
+                android:layout_height="@dimen/dp_28"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                tl:tl_bar_color="#00ffffff"
+                tl:tl_indicator_color="#ffffff"
+                tl:tl_indicator_corner_radius="6dp"
+                tl:tl_tab_padding="@dimen/dp_12"
+                tl:tl_textSelectColor="#6094C9"
+                tl:tl_textUnselectColor="#ffffff"
+                tl:tl_textsize="12sp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48">
+
+            <com.flyco.tablayout.SegmentTabLayout
+                android:id="@+id/national_stl"
+                android:layout_width="@dimen/dp_260"
+                android:layout_height="@dimen/dp_30"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                tl:tl_bar_color="#00ffffff"
+                tl:tl_indicator_color="#ffffff"
+                tl:tl_indicator_corner_radius="6dp"
+                tl:tl_tab_padding="@dimen/dp_12"
+                tl:tl_textSelectColor="#6094C9"
+                tl:tl_textUnselectColor="#ffffff"
+                tl:tl_textsize="12sp" />
+
+
+            <com.flyco.tablayout.SegmentTabLayout
+                android:id="@+id/province_stl"
+                android:layout_width="@dimen/dp_260"
+                android:layout_height="@dimen/dp_28"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                tl:tl_bar_color="#00ffffff"
+                tl:tl_indicator_color="#ffffff"
+                tl:tl_indicator_corner_radius="6dp"
+                tl:tl_tab_padding="@dimen/dp_12"
+                tl:tl_textSelectColor="#6094C9"
+                tl:tl_textUnselectColor="#ffffff"
+                tl:tl_textsize="12sp" />
+
+        </RelativeLayout>
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:scrollbars="none"
+            android:visibility="gone">
+
+            <suncere.shanxi.androidapp.customview.SegmentControl
+                android:id="@+id/list_TimeRange_CP"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_centerInParent="true"
+                android:textSize="38px"
+                app:backgroundColor="#004789DE"
+                app:colors="#ffffff"
+                app:cornerRadius="10px"
+                app:direction="horizon"
+                app:horizonGap="10px"
+                app:texts="国控|省控|城市|区县|全国|169城市|31省"
+                app:verticalGap="32px" />
+        </HorizontalScrollView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/list_sore_way"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6px"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/list_sore_image_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/up_w" />
+
+                    <ImageView
+                        android:id="@+id/list_sore_image_down"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/up" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="排名"
+                    android:textColor="#fff"
+                    android:textSize="28px" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/list_title_tab_city"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="城市"
+                android:textColor="#fff"
+                android:textSize="28px" />
+
+            <TextView
+                android:id="@+id/list_title_tab_station"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:text="站点"
+                android:textColor="#fff"
+                android:textSize="28px" />
+
+            <TextView
+                android:id="@+id/list_title_tab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="浓度值"
+                android:textColor="#fff"
+                android:textSize="28px" />
+
+            <TextView
+                android:id="@+id/list_title_tab_Pollutant"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:text="首要污染物"
+                android:textColor="#fff"
+                android:textSize="28px" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginBottom="@dimen/dp_12"
+            android:background="#66ffffff" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/list_swipeRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/list_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+            <LinearLayout
+                android:id="@+id/list_emptyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/nothing_data" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="4dp"
+                    android:text="暂无数据!"
+                    android:textColor="#88E2E2E2"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingTop="6dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <RelativeLayout
+                    android:id="@+id/list_pollutant_rale_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:background="@drawable/round_rect_white_pal2">
+
+                    <Spinner
+                        android:id="@+id/list_pollutant_rale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_28"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:backgroundTint="@color/color_while"
+                        android:minWidth="@dimen/dp_70"
+                        android:overlapAnchor="false"
+                        android:spinnerMode="dropdown" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/selected_time_tv"
+                    android:layout_width="86dp"
+                    android:layout_height="@dimen/dp_28"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_toRightOf="@+id/list_pollutant_rale_layout"
+                    android:background="@drawable/round_rect_white_pal2"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:padding="6dp"
+                    android:text="2017-07-01"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/sp_12"
+                    android:visibility="gone" />
+
+                <com.flyco.tablayout.SegmentTabLayout
+                    android:id="@+id/list_time_select"
+                    android:layout_width="@dimen/dp_140"
+                    android:layout_height="@dimen/dp_28"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:textSize="@dimen/sp_12"
+                    tl:tl_bar_color="#00ffffff"
+                    tl:tl_indicator_color="#ffffff"
+                    tl:tl_indicator_corner_radius="6dp"
+                    tl:tl_tab_padding="@dimen/dp_6"
+                    tl:tl_textSelectColor="#6094C9"
+                    tl:tl_textUnselectColor="#ffffff"
+                    tl:tl_textsize="12sp" />
+
+            </RelativeLayout>
+            <!-- <RelativeLayout
+                 android:id="@+id/list_pollutant_rale"
+                 android:layout_width="150px"
+                 android:layout_height="60px"
+                 android:layout_marginLeft="70px"
+                 android:paddingLeft="4px"
+                 android:paddingRight="6px"
+                 android:background="@drawable/round_rect_white_pal2"
+                 >
+                 <TextView
+                     android:id="@+id/list_pollutant_select"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_alignParentLeft="true"
+                     android:layout_alignParentStart="true"
+                     android:layout_centerVertical="true"
+                     android:textSize="32px"
+                     android:textColor="#fff"
+                     android:text="PM2.5"/>
+                 <ImageView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_alignParentRight="true"
+                     android:layout_centerVertical="true"
+                     android:src="@drawable/down_w"/>
+             </RelativeLayout>-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="20px"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/list_puttime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:text="今天--点更新"
+                    android:textColor="#fff"
+                    android:textSize="28px"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

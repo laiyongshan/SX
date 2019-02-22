@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:rv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="2">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:gravity="center|bottom">
+
+            <TextView
+                android:id="@+id/cityName_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="太原市 2019-02-18 09:00"
+                android:textColor="@color/color_while"
+                android:textSize="@dimen/sp_13" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_2"
+                android:text="" />
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.shinelw.library.ColorArcProgressBar
+                android:id="@+id/aqi_capbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                app:back_color="#fff"
+                app:back_width="12dp"
+                app:front_width="9dp"
+                app:is_need_content="true"
+                app:is_need_title="false"
+                app:is_need_unit="true"
+                app:max_value="350"
+                app:string_unit=""
+                app:total_engle="200" />
+
+            <LinearLayout
+                android:id="@+id/primary_pollutant_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_100"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="首要污染物"
+                    android:textColor="@color/color_while"
+                    android:textSize="@dimen/sp_11" />
+
+                <TextView
+                    android:id="@+id/primary_pollutant_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_2"
+                    android:textColor="@color/color_while"
+                    android:textSize="@dimen/sp_11"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/primary_pollutant_ll"
+                android:gravity="bottom|center_horizontal"
+                android:layout_marginTop="@dimen/dp_16"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/temperature_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="12dp"
+                    android:gravity="center_vertical"
+                    android:text="--℃ --"
+                    android:layout_marginBottom="@dimen/dp_16"
+                    android:textColor="@color/color_while"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:id="@+id/wind_humidity_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="12dp"
+                    android:layout_marginBottom="@dimen/dp_12"
+                    android:gravity="center_vertical"
+                    android:text="优"
+                    android:textColor="@color/color_while"
+                    android:textSize="@dimen/sp_14" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_12"
+        android:paddingRight="@dimen/dp_12">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:gravity="center_vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="0dp"
+                android:gravity="right|bottom"
+                android:paddingRight="@dimen/dp_12">
+
+                <TextView
+                    android:id="@+id/PM25_value_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textColor="@color/color_while"
+                    android:textSize="@dimen/sp_14" />
+
+
+                <com.flyco.roundview.RoundRelativeLayout
+                    android:id="@+id/pm25_level_rl"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_8"
+                    android:layout_margin="@dimen/dp_3"
+                    rv:rv_cornerRadius="@dimen/dp_6" />
+            </LinearLayout>
+
+            <suncere.shanxi.androidapp.customview.PollutantNameTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginBottom="0dp"
+                android:text="PM2.5"
+                android:textColor="@color/color_while"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:gravity="bottom">
+
+            <suncere.shanxi.androidapp.customview.PollutantNameTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="PM10"
+                android:textColor="@color/color_while"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:gravity="bottom"
+                android:paddingRight="@dimen/dp_12">
+
+                <TextView
+                    android:id="@+id/PM10_value_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="123"
+                    android:textColor="@color/color_while"
+                    android:textSize="@dimen/sp_14" />
+
+                <com.flyco.roundview.RoundRelativeLayout
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_6"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="@dimen/dp_3"
+                    rv:rv_backgroundColor="@color/aqi_2g"
+                    rv:rv_cornerRadius="@dimen/dp_6" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:gravity="bottom">
+
+            <suncere.shanxi.androidapp.customview.PollutantNameTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="SO2"
+                android:textColor="@color/color_while"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:gravity="bottom"
+                android:paddingRight="@dimen/dp_12">
+
+                <TextView
+                    android:id="@+id/SO2_value_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="23"
+                    android:textColor="@color/color_while"
+                    android:textSize="@dimen/sp_14" />
+
+                <com.flyco.roundview.RoundRelativeLayout
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_6"
+                    android:layout_margin="@dimen/dp_3"
+                    rv:rv_backgroundColor="@color/aqi_1g"
+                    rv:rv_cornerRadius="@dimen/dp_6"
+
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:gravity="bottom">
+
+            <suncere.shanxi.androidapp.customview.PollutantNameTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="NO2"
+                android:textColor="@color/color_while"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:gravity="bottom"
+                android:paddingRight="@dimen/dp_12">
+
+                <TextView
+                    android:id="@+id/NO2_value_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="26"
+                    android:textColor="@color/color_while"
+                    android:textSize="@dimen/sp_14" />
+
+                <com.flyco.roundview.RoundRelativeLayout
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_6"
+                    android:layout_margin="@dimen/dp_3"
+                    rv:rv_backgroundColor="@color/aqi_1g"
+                    rv:rv_cornerRadius="@dimen/dp_6" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:gravity="bottom">
+
+            <suncere.shanxi.androidapp.customview.PollutantNameTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="O3"
+                android:textColor="@color/color_while"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:gravity="bottom"
+                android:paddingRight="@dimen/dp_12">
+
+                <TextView
+                    android:id="@+id/O3_value_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="123"
+                    android:textColor="@color/color_while"
+                    android:textSize="@dimen/sp_14" />
+
+                <com.flyco.roundview.RoundRelativeLayout
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_6"
+                    android:layout_margin="@dimen/dp_3"
+                    rv:rv_backgroundColor="@color/aqi_1g"
+                    rv:rv_cornerRadius="@dimen/dp_6" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:gravity="center_vertical|bottom">
+
+            <suncere.shanxi.androidapp.customview.PollutantNameTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="CO"
+                android:textColor="@color/color_while"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:gravity="bottom"
+                android:paddingRight="@dimen/dp_12">
+
+                <TextView
+                    android:id="@+id/CO_value_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="123"
+                    android:textColor="@color/color_while"
+                    android:textSize="@dimen/sp_14" />
+
+                <com.flyco.roundview.RoundRelativeLayout
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_6"
+                    android:layout_margin="@dimen/dp_3"
+                    rv:rv_backgroundColor="@color/aqi_1g"
+                    rv:rv_cornerRadius="@dimen/dp_6" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/tips_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:drawableLeft="@mipmap/icon_level"
+            android:drawablePadding="@dimen/dp_6"
+            android:text="健康提示"
+            android:textColor="@color/color_while"
+            android:textSize="@dimen/sp_12"
+            rv:rv_textPressColor="@color/luncy" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <data>
+        <variable
+            name="SeachBean"
+            type="suncere.shanxi.androidapp.model.entity.CityBean"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/homeselectfollow_lin"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:gravity="center_vertical"
+        >
+        <!--android:background="@{SeachBean.select ? @color/followCityItmeBg : @color/unfollowCityItmeBg}"-->
+<!-- android:background="@{SeachBean.select ? @color/followCityItmeBg : @color/unfollowCityItmeBg}"-->
+
+        <CheckBox
+            android:id="@+id/homeselectfollow_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/checkbox_stytle"
+            android:button="@null"
+            android:checked="@{SeachBean.select}"
+            android:clickable="false"
+            android:enabled="false"
+            android:layout_marginLeft="20dp"/>
+        <!--  android:checked="@{SeachBean.select}"-->
+
+        <TextView
+            android:id="@+id/homeselectfollow_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#333333"
+            android:textSize="12sp"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:text="@{SeachBean.city}"
+            />
+<!--  "-->
+
+    </LinearLayout>
+</layout>

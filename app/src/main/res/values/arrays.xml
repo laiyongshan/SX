@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="citys">
+
+        <item>兰州市</item>
+        <item>嘉峪关市</item>
+        <item>金昌市</item>
+        <item>武威市</item>
+        <item>酒泉市</item>
+        <item>张掖市</item>
+        <item>定西市</item>
+        <item>天水市</item>
+        <item>白银市</item>
+        <item>平凉市</item>
+        <item>临夏州</item>
+        <item>庆阳市</item>
+        <item>陇南市</item>
+        <item>甘南州</item>
+
+    </string-array>
+
+</resources>
